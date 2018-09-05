@@ -135,14 +135,14 @@ const pickAuthor = function(arr){
   const quoteArr = pickAuthor.quote;
   const pickQuote = quoteArr[randomNum(quoteArr)];
 
-  const displayAuthor = document.querySelector(".author p");
+  const displayAuthor = document.getElementById("authorText");
   displayAuthor.textContent = author;
 
-  const displayQuote = document.querySelector(".quote p");
+  const displayQuote = document.getElementById("quoteText");
   displayQuote.textContent = pickQuote;
 }
 
-const newQuote = document.querySelector(".getQuote");
+const newQuote = document.getElementById("getQuote");
 newQuote.addEventListener("click", function(){
   pickAuthor(quotes);
 });
@@ -156,11 +156,11 @@ const openTweet =  function (){
                           location = yes, titlebar = yes, status = yes`;
 
   let url = "https://twitter.com/intent/tweet?&text=";
-  let text = document.querySelector(".quote p").innerText;
-  let authorTweet = document.querySelector(".author p").innerText; 
+  let text = document.getElementById("quoteText").innerText;
+  let authorTweet = document.getElementById("authorText").innerText; 
   let tweetUrl = `${url}${text} -${authorTweet}`;
   window.open(tweetUrl,"tweet", windowFeature);
 }
 
-const tweet = document.querySelector(".tweet");
+const tweet = document.getElementById("tweetQuote");
 tweet.addEventListener("click", openTweet);
