@@ -1,0 +1,52 @@
+.quotes{
+    border: 2px solid $border-color;
+    margin: 0.4em;
+    &__breakline{
+        width: 90%;
+        @include animation(extend, 1s, 1, 0s, ease-out);
+    }
+    &__author{
+        padding: 0.4em;
+    }
+    &__quote{
+        position: relative;
+        &:before,
+        &:after{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10em;
+        }
+        &:before{
+            content: open-quote;
+            position: absolute;
+            left: 5px;
+            top: -25px;
+        }
+        &:after{
+            content: close-quote;
+            position: absolute;
+            right: 5px;
+            bottom: -110px;
+        }
+    }
+}
+
+@include keyframes(extend){
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 90%;
+    }
+}
+
+.author__text{
+    font-size: 2em;
+    margin: 5px 0 0;
+}
+
+.quote__text{
+    margin: 0;
+    position: relative;
+    padding: 3em 1.5em;
+    font-size: 1.1em;
+}

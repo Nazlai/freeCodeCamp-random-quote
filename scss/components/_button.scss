@@ -1,0 +1,30 @@
+.btn{
+    text-transform: uppercase;
+    background: transparent;
+    opacity: 0.2;
+    border: none;
+    letter-spacing: 5px;
+    outline: none;
+        @include animation(fadeout,3s, 1, 0s, linear);
+        &:hover{
+            @include animation(solidify, 1s, 1, 0s, linear);
+        }
+}
+
+@include keyframes(fadeout){
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.2;
+    }
+}
+
+@include keyframes(solidify){
+    0%{
+        opacity: 0.2;
+    }
+    100%{
+        opacity: 1;
+    }
+}
